@@ -1,0 +1,102 @@
+<!--<h2>Chat</h2>
+<ul>
+  <li *ngFor="let chatMessage of allMessages" style="list-style: none;">
+    {{chatMessage.user }}: {{chatMessage.message}}
+  </li>
+</ul>
+<form (ngSubmit)="sendMessage()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Client invoke</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Message" [(ngModel)]="chatMessage.message"
+           name="message">
+  </div>
+  <button type="submit" class="btn btn-default" [disabled]="!canSendMessage">Send</button>
+</form>-->
+<form class="form-inline" (ngSubmit)="sendMessage()">
+  <ul class="nav nav-tabs">
+    <li *ngFor="let tab of tabs" class="active"><a data-toggle="tab" href="#home">{{tab.heading}}</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div *ngFor="let tab of tabs" id="home" class="tab-pane fade in active">
+      <h3>{{tab.title}}</h3>
+      <input type="hidden" name="room" [(ngModel)]="chatMessage.room" value="{{tab.heading}}" />
+      <p *ngFor="let msg of tab.messageHistory">{{msg.text}}</p>
+    </div>
+  </div>
+
+  <footer class="footer" style="width:70%;background:#fdd679;">
+    <div class="container">
+      <div class="row" style="background:#fdd679;">
+        <div class="col-sm-9">
+
+          <div style="width:100%;  padding-top: 10px;" class="clearfix">
+            <input type="text" style="width:66%;padding:0px 2%;margin-bottom:5px; float:left; height:32px;" type="text" id="message" [(ngModel)]="chatMessage.message" name="message" class="form-control pull-left shadow" input-focus="content" />
+            
+            <input style="width:26%;padding:6px 0px;text-align:center;margin-bottom:5px; float:right; border-radius:3px; background:#e9a403;" id="sendmessage" class="btn btn-default pull-right shadow" type="submit" value="Send" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</form>
+
+
+<!--<div style="background:#fdd679;height:85vh;" onload="arrow_height()">
+  <div id="out" style="width:100%;height:75%; border-top-left-radius:3px; position: absolute;    top: 4.5em;    bottom: 0; right: 0;    overflow: auto; border-top-right-radius:3px;" class="clearfix">
+    <div class="col-lg-12">
+      <div>
+        <tabset>
+          <tab *ngFor="let tab of tabs" heading="{{tab.heading}}" title="{{tab.title}}" active="tab.active" disabled="tab.disabled" (select)="tabChange(tab)">
+            <div>
+              <ul class="list-group" id="klk">
+                <li *ngFor="let msg of tab.messageHistory" class="list-group-item" style="background:#fdd679;border:none;">
+                  <div class="input-group" style="width:100%;">
+                    <div ng-if="!msg.isSelf" style="width:100%;" class="clearfix" ng-class="{ 'pull-left':!msg.isSelf, 'pull-right': msg.isSelf }">
+                      <div class="arrow-left" style="float:left; margin-top:5px;"></div>
+                      <div style="width:70%;padding:2px;text-align:left;margin:5px 0px; background:#ffffff;" class="shadow pull-left">
+                        <label style="color:#a0d0fb;padding:0px 5px;">{{ msg.user.Id }}</label>
+                        <div style="width:100%;float:left;padding:2px 5px;text-align:left;">
+                          <span ng-bind-html="msg.text"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div ng-if="msg.isSelf" style="width:100%;" class="clearfix" ng-class="{ 'pull-left':!msg.isSelf, 'pull-right': msg.isSelf }">
+                      <div class="arrow-right" id="ttt" style="float:right; margin-top:5px;height:inherit;"></div>
+                      <div style="width:70%;float:right;padding:2px;text-align:right;margin:5px 0px; background:#ffffff;" class="shadow">
+                        <label style="color:rgba(50, 50, 50, 0.50);padding:0px 5px;">{{ msg.userName }}</label>
+                        <div style="width:100%;float:right;padding:2px 5px;text-align:right;">
+                          <span ng-bind-html="msg.text"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="glyphicon glyphicon-repeat" ng-click="reSend(msg.text)" ng-if="msg.IsSendingFailed">
+                    <img src="~/Content/loading.gif" />
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer" style="width:100%;background:#fdd679;">
+    <div class="container">
+      <div class="row" style="background:#fdd679;">
+        <div class="col-sm-12">
+          <form class="form-inline">
+            <div style="width:100%;  padding-top: 10px;" class="clearfix">
+              <input type="text" style="width:66%;padding:0px 2%;margin-bottom:5px; float:left; height:32px;" type="text" id="message" [(ngModel)]="message" class="form-control pull-left shadow" input-focus="content" />
+
+              <button style="width:26%;padding:6px 0px;text-align:center;margin-bottom:5px; float:right; border-radius:3px; background:#e9a403;" id="sendmessage" ng-click="sendMessage()" class="btn btn-default pull-right shadow" type="submit"> Send </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>-->
