@@ -11,9 +11,9 @@ import { Tab } from '../Models/tab.model';
 
 export class HomeComponent {
   chatMessage: ChatMessage;
-  allMessages: ChatMessage[];
   canSendMessage: boolean;
   tabs: Tab[];
+  currentRoom: string;
 
   constructor(
     private signalrService: SignalRService,
@@ -22,15 +22,21 @@ export class HomeComponent {
   {
     this.subscribeToEvents();
     this.chatMessage = new ChatMessage();
-    this.allMessages = [];
     this.tabs = [];
     this.tabs.push(new Tab('Lobby', 'Welcome to lobby'));
+    this.tabs.push(new Tab('SignalR', 'Welcome to SignalR Room'));
+    this.currentRoom = 'Lobby';
   }
 
   sendMessage() {
     if (this.canSendMessage) {
+      this.chatMessage.room = this.currentRoom;
       this.signalrService.sendChatMessage(this.chatMessage);
     }
+  }
+
+  OnRoomChange(room) {
+    this.currentRoom = room;
   }
 
   private subscribeToEvents(): void {
@@ -41,11 +47,10 @@ export class HomeComponent {
     this.signalrService.messageReceived.subscribe((message: ChatMessage) => {
       this._ngZone.run(() => {
         this.chatMessage = new ChatMessage();
-        this.allMessages.push(
-          new ChatMessage(message.user, message.text)
-        );
         let room = this.tabs.find(t => t.heading == message.room);
-        room.messageHistory.push(new ChatMessage(message.user, message.text, message.room));
+        if (room) {
+            room.messageHistory.push(new ChatMessage(message.user, message.message, message.room));
+        }
       });
     });
   }
