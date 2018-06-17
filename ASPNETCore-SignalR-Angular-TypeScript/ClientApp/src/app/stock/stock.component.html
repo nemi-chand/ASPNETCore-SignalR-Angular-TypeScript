@@ -1,0 +1,22 @@
+
+<div>
+  <br />
+  <button name="openmarket" class="btn btn-primary" (click)="openMarketClicked()">Open Market</button>
+  <button name="" class="btn btn-danger" (click)="closeMarketClicked()">Close Market</button>
+  <button name="" class="btn btn-default" (click)="resetClicked()">Reset</button>
+  <p>Stock Count : {{stocks.length}}</p>
+  <p>Market Status : {{marketStatus}}</p>
+
+  <table class="table table-response table-bordered">
+    <thead>
+    <th>Symbol</th>
+    <th>Price</th>
+    <th>Change %</th>
+    </thead>
+    <tr *ngFor="let stock of stocks">
+      <td>{{stock.symbol}}</td>
+      <td>{{stock.price}}</td>
+      <td>{{stock.percentChange}} {{stock.percentChange >= 0 ? '▲' : '▼'}}</td>
+    </tr>
+  </table>
+</div>

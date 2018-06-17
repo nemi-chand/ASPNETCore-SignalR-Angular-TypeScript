@@ -126,9 +126,10 @@ namespace ASPNETCore_SignalR_Angular_TypeScript
 
 			var stocks = new List<Stock>
 			{
-				new Stock { Symbol = "MSFT", Price = 75.12m },
-				new Stock { Symbol = "AAPL", Price = 158.44m },
-				new Stock { Symbol = "GOOG", Price = 924.54m }
+				new Stock { Symbol = "HDFC Bank", Price = 2049.35m },
+				new Stock { Symbol = "Bharti Airtel", Price = 377.55m },
+				new Stock { Symbol = "SBI", Price = 273.00m },
+				new Stock { Symbol = "Reliance", Price = 984.35m }
 			};
 
 			stocks.ForEach(stock => _stocks.TryAdd(stock.Symbol, stock));

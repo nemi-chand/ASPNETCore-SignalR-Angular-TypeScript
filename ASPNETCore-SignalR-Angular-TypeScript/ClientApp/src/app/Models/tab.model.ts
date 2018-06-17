@@ -1,5 +1,6 @@
 import { ChatMessage } from '../Models/chatmessage.model';
 
+/** Represent Tab class */
 export class Tab {
   messageHistory: ChatMessage[];
   heading: string;

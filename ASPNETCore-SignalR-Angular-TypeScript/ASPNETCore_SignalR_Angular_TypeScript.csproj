@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.0" />
     <PackageReference Include="System.Reactive.Linq" Version="4.0.0" />
   </ItemGroup>
 
@@ -29,12 +29,16 @@
     <None Remove="ClientApp\src\app\Models\chatmessage.model.ts" />
     <None Remove="ClientApp\src\app\Models\tab.model.ts" />
     <None Remove="ClientApp\src\app\services\signalR.service.ts" />
+    <None Remove="ClientApp\src\app\services\stock.signalR.service.ts" />
+    <None Remove="ClientApp\src\app\stock\stock.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\Models\chatmessage.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Models\tab.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\signalR.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\stock.signalR.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\stock\stock.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

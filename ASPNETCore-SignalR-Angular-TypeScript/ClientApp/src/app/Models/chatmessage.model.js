@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/** represent chat message class */
 var ChatMessage = /** @class */ (function () {
     function ChatMessage(user, message, room) {
         if (user === void 0) { user = ''; }

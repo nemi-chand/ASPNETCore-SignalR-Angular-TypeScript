@@ -1,5 +1,5 @@
 
-
+/** represent chat message class */
 export class ChatMessage {
 
   user: string;

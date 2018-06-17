@@ -1,7 +1,7 @@
 {
   "name": "ASPNETCore-SignalR-Angular-TypeScript",
   "version": "1.0.0",
-  "description": "",
+  "description": "Getting started with SignalR using Angular and ASPNET Core",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aspnet/signalr": "^1.0.0-rc1-update1"
-  }
+    "@aspnet/signalr": "^1.0.0",
+    "tslib": "^1.9.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nemi-chand/ASPNETCore-SignalR-Angular-TypeScript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nemi-chand/ASPNETCore-SignalR-Angular-TypeScript/issues"
+  },
+  "homepage": "https://github.com/nemi-chand/ASPNETCore-SignalR-Angular-TypeScript#readme"
 }

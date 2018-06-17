@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/** Represent Tab class */
 var Tab = /** @class */ (function () {
     function Tab(heading, title) {
         if (heading === void 0) { heading = ''; }

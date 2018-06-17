@@ -30,7 +30,9 @@ namespace ASPNETCore_SignalR_Angular_TypeScript
             });
 
 			services.AddSignalR();
-        }
+
+			services.AddSingleton<StockTicker>();
+		}
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -52,6 +54,7 @@ namespace ASPNETCore_SignalR_Angular_TypeScript
 			app.UseSignalR(route => 
 			{
 				route.MapHub<ChatHub>("/chathub");
+				route.MapHub<StockTickerHub>("/stock");
 			});
 
             app.UseMvc(routes =>
