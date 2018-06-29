@@ -32,6 +32,11 @@
                 <span class='glyphicon glyphicon-th-list'></span> Stock Data
               </a>
             </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/dynamic"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Dynamic Hub
+              </a>
+            </li>
           </ul>
         </div>
     </div>

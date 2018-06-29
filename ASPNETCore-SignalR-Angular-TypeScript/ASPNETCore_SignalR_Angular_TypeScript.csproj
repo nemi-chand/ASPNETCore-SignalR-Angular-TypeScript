@@ -28,6 +28,7 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\Models\chatmessage.model.ts" />
     <None Remove="ClientApp\src\app\Models\tab.model.ts" />
+    <None Remove="ClientApp\src\app\services\dynamicHub.signalR.service.ts" />
     <None Remove="ClientApp\src\app\services\signalR.service.ts" />
     <None Remove="ClientApp\src\app\services\stock.signalR.service.ts" />
     <None Remove="ClientApp\src\app\stock\stock.component.ts" />
@@ -36,6 +37,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\Models\chatmessage.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Models\tab.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\dynamicHub.signalR.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\signalR.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\stock.signalR.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\stock\stock.component.ts" />

@@ -55,6 +55,7 @@ namespace ASPNETCore_SignalR_Angular_TypeScript
 			{
 				route.MapHub<ChatHub>("/chathub");
 				route.MapHub<StockTickerHub>("/stock");
+				route.MapHub<DynamicChatHub>("/dynamichub");
 			});
 
             app.UseMvc(routes =>
